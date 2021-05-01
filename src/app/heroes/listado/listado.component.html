@@ -1,0 +1,22 @@
+<p>Listado de Heroes</p>
+
+<!-- *ngIF arranca en falso y pregunta si es distinto a un string vacio entonces muestra -->
+<div *ngIf=" heroeBorrado; else noBorrado">
+    <h3>Heroes borrados: <small>{{heroeBorrado}}</small></h3>
+</div>
+
+<ng-template #noBorrado>
+<h3>no ha borrado nada.</h3>
+</ng-template>
+
+
+<button (click)="borrarHerore()">
+    Borrar Heore
+</button>
+
+<ul>
+    <li *ngFor="let lista of heroes">
+        {{lista}}
+    </li>
+</ul>
+
